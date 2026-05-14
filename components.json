@@ -1,0 +1,765 @@
+{
+  "$schema": "design-system-components/v1",
+  "$description": "Core components of the mini-library design system. All components use tokens from tokens.json.",
+  "$tokensRef": "https://raw.githubusercontent.com/FedericoGogoal/mini-design-system-test/main/tokens.json",
+
+  "categories": {
+    "form-elements": {
+      "label": "Form Elements",
+      "components": ["Input", "Textarea", "Checkbox-Label", "Radio Button-Label", "Switch", "Dropdown", "AutoComplete", "Date Picker", "Defined Field", "Field", "Label"]
+    },
+    "actions": {
+      "label": "Actions",
+      "components": ["Button", "Button Icon", "Button Group", "Link", "Anchor", "Tag interactive"]
+    },
+    "navigation": {
+      "label": "Navigation",
+      "components": ["Header Navigation", "Tab Bar", "Breadcrumb", "Menu", "Pagination"]
+    },
+    "data-display": {
+      "label": "Data Display",
+      "components": ["Card Image", "Card Icon", "Badge", "Tag", "Avatar", "Avatar Caption", "Avatar Group", "Icon", "List", "Row", "Cell", "Row table", "Tree List", "Accordion", "Expandable"]
+    },
+    "feedback": {
+      "label": "Feedback",
+      "components": ["Alert", "Snackbar", "ToolTip", "Modal", "Loader", "Progress Bar", "Progress Circle"]
+    },
+    "layout": {
+      "label": "Layout",
+      "components": ["Hr", "Carousel", "Forms"]
+    }
+  },
+
+  "components": {
+    "Button": {
+      "category": "actions",
+      "description": "Primary interactive element for triggering actions.",
+      "variants": {
+        "type": ["primary", "secondary", "tertiary", "ghost", "danger"],
+        "size": ["sm", "md", "lg"],
+        "state": ["default", "hover", "active", "disabled", "loading"]
+      },
+      "tokens": {
+        "background": "surface.action-1",
+        "backgroundHover": "surface.action-1-hover",
+        "backgroundSecondary": "surface.action-2",
+        "backgroundSecondaryHover": "surface.action-2-hover",
+        "text": "text.on-action",
+        "textDisabled": "text.disabled",
+        "border": "border.action",
+        "borderHover": "border.action-hover",
+        "radiusComponent": "radiusComponent.button",
+        "spacingMd": "componentSpacing.button-md-icon",
+        "spacingLg": "componentSpacing.button-lg-icon"
+      }
+    },
+
+    "Button Icon": {
+      "category": "actions",
+      "description": "Icon-only button variant.",
+      "variants": {
+        "type": ["primary", "secondary", "ghost"],
+        "size": ["sm", "md", "lg"],
+        "state": ["default", "hover", "disabled"]
+      },
+      "tokens": {
+        "background": "surface.action-1",
+        "backgroundHover": "surface.action-1-hover",
+        "spacing": "componentSpacing.button-icon-sm",
+        "radius": "radiusComponent.button"
+      }
+    },
+
+    "Button Group": {
+      "category": "actions",
+      "description": "Group of related buttons displayed together.",
+      "variants": {
+        "size": ["sm", "md", "lg"]
+      },
+      "tokens": {
+        "border": "border.primary",
+        "radius": "radiusComponent.button"
+      }
+    },
+
+    "Input": {
+      "category": "form-elements",
+      "description": "Single-line text input field.",
+      "variants": {
+        "state": ["default", "focus", "filled", "error", "disabled"],
+        "size": ["sm", "md", "lg"],
+        "type": ["text", "password", "search", "number"]
+      },
+      "tokens": {
+        "background": "surface.primary",
+        "backgroundDisabled": "surface.disabled",
+        "border": "border.primary",
+        "borderFocus": "border.focus",
+        "borderError": "border.error",
+        "text": "text.body",
+        "textDisabled": "text.disabled",
+        "radius": "radiusComponent.input",
+        "borderWidth": "borderWidthComponent.form"
+      }
+    },
+
+    "Textarea": {
+      "category": "form-elements",
+      "description": "Multi-line text input field.",
+      "variants": {
+        "state": ["default", "focus", "filled", "error", "disabled"]
+      },
+      "tokens": {
+        "background": "surface.primary",
+        "border": "border.primary",
+        "borderFocus": "border.focus",
+        "borderError": "border.error",
+        "text": "text.body",
+        "radius": "radiusComponent.input",
+        "borderWidth": "borderWidthComponent.form"
+      }
+    },
+
+    "Dropdown": {
+      "category": "form-elements",
+      "description": "Select input with dropdown options list.",
+      "variants": {
+        "state": ["default", "open", "selected", "error", "disabled"]
+      },
+      "tokens": {
+        "background": "surface.primary",
+        "backgroundOption": "surface.secondary",
+        "border": "border.primary",
+        "borderFocus": "border.focus",
+        "text": "text.body",
+        "radius": "radiusComponent.input"
+      }
+    },
+
+    "AutoComplete": {
+      "category": "form-elements",
+      "description": "Input with autocomplete suggestions.",
+      "variants": {
+        "state": ["default", "typing", "suggestions", "selected", "error", "disabled"]
+      },
+      "tokens": {
+        "background": "surface.primary",
+        "border": "border.primary",
+        "borderFocus": "border.focus",
+        "text": "text.body",
+        "radius": "radiusComponent.input"
+      }
+    },
+
+    "Date Picker": {
+      "category": "form-elements",
+      "description": "Date selection input with calendar popover.",
+      "variants": {
+        "state": ["default", "open", "selected", "error", "disabled"]
+      },
+      "tokens": {
+        "background": "surface.primary",
+        "border": "border.primary",
+        "borderFocus": "border.focus",
+        "text": "text.body",
+        "radius": "radiusComponent.input"
+      }
+    },
+
+    "Checkbox-Label": {
+      "category": "form-elements",
+      "description": "Checkbox input with associated label.",
+      "variants": {
+        "state": ["unchecked", "checked", "indeterminate", "disabled"],
+        "size": ["sm", "md"]
+      },
+      "tokens": {
+        "background": "surface.primary",
+        "backgroundChecked": "surface.action-1",
+        "border": "border.primary",
+        "borderChecked": "border.action",
+        "text": "text.body",
+        "textDisabled": "text.disabled",
+        "borderWidth": "borderWidthComponent.form"
+      }
+    },
+
+    "Radio Button-Label": {
+      "category": "form-elements",
+      "description": "Radio button input with associated label.",
+      "variants": {
+        "state": ["unchecked", "checked", "disabled"]
+      },
+      "tokens": {
+        "backgroundChecked": "surface.action-1",
+        "border": "border.primary",
+        "borderChecked": "border.action",
+        "text": "text.body",
+        "textDisabled": "text.disabled",
+        "borderWidth": "borderWidthComponent.form"
+      }
+    },
+
+    "Switch": {
+      "category": "form-elements",
+      "description": "Toggle switch for boolean on/off states.",
+      "variants": {
+        "state": ["off", "on", "disabled-off", "disabled-on"]
+      },
+      "tokens": {
+        "backgroundOn": "surface.action-1",
+        "backgroundOff": "surface.disabled",
+        "backgroundDisabled": "surface.disabled-selected"
+      }
+    },
+
+    "Defined Field": {
+      "category": "form-elements",
+      "description": "Read-only field displaying a label/value pair.",
+      "variants": {
+        "state": ["default"]
+      },
+      "tokens": {
+        "text": "text.body",
+        "label": "text.disabled"
+      }
+    },
+
+    "Field": {
+      "category": "form-elements",
+      "description": "Form field wrapper with label, input, and helper text.",
+      "variants": {
+        "state": ["default", "error", "disabled"],
+        "size": ["sm", "md", "lg"]
+      },
+      "tokens": {
+        "label": "text.body",
+        "text": "text.body",
+        "errorText": "text.error",
+        "border": "border.primary",
+        "borderError": "border.error"
+      }
+    },
+
+    "Label": {
+      "category": "form-elements",
+      "description": "Standalone label element for form fields.",
+      "variants": {
+        "required": [true, false]
+      },
+      "tokens": {
+        "text": "text.body"
+      }
+    },
+
+    "Link": {
+      "category": "actions",
+      "description": "Inline text link for navigation.",
+      "variants": {
+        "state": ["default", "hover", "visited", "disabled"],
+        "size": ["sm", "md", "lg"]
+      },
+      "tokens": {
+        "text": "text.action",
+        "textHover": "text.action-hover",
+        "textDisabled": "text.disabled"
+      }
+    },
+
+    "Anchor": {
+      "category": "actions",
+      "description": "Standalone navigation link, typically used outside of body text.",
+      "variants": {
+        "state": ["default", "hover", "active"]
+      },
+      "tokens": {
+        "text": "text.action",
+        "textHover": "text.action-hover"
+      }
+    },
+
+    "Tag": {
+      "category": "data-display",
+      "description": "Static label used to categorize or classify content.",
+      "variants": {
+        "type": ["default", "success", "warning", "error", "information", "highlight"],
+        "size": ["sm", "md"]
+      },
+      "tokens": {
+        "backgroundDefault": "surface.secondary",
+        "backgroundSuccess": "surface.sucess",
+        "backgroundWarning": "surface.warning",
+        "backgroundError": "surface.error",
+        "backgroundInformation": "surface.information",
+        "backgroundHighlight": "surface.highlight",
+        "text": "text.body",
+        "radius": "radius.round"
+      }
+    },
+
+    "Tag interactive": {
+      "category": "actions",
+      "description": "Clickable/dismissible tag variant.",
+      "variants": {
+        "state": ["default", "hover", "selected", "disabled"],
+        "size": ["sm", "md"]
+      },
+      "tokens": {
+        "background": "surface.secondary",
+        "backgroundSelected": "surface.action-1",
+        "border": "border.primary",
+        "borderSelected": "border.action",
+        "text": "text.body",
+        "radius": "radius.round"
+      }
+    },
+
+    "Badge": {
+      "category": "data-display",
+      "description": "Small numeric or status indicator, typically overlaid on an icon or avatar.",
+      "variants": {
+        "type": ["default", "success", "warning", "error", "information"],
+        "size": ["sm", "md"]
+      },
+      "tokens": {
+        "backgroundDefault": "surface.secondary",
+        "backgroundSuccess": "surface.sucess",
+        "backgroundWarning": "surface.warning",
+        "backgroundError": "surface.error",
+        "backgroundInformation": "surface.information",
+        "text": "text.on-action",
+        "radius": "radius.round"
+      }
+    },
+
+    "Alert": {
+      "category": "feedback",
+      "description": "Inline message for system feedback: success, error, warning, info.",
+      "variants": {
+        "type": ["success", "warning", "error", "information"],
+        "style": ["filled", "outlined"],
+        "dismissible": [true, false]
+      },
+      "tokens": {
+        "backgroundSuccess": "surface.alertSuccess",
+        "backgroundWarning": "surface.alertWarning",
+        "backgroundError": "surface.alertError",
+        "backgroundInformation": "surface.alertInformation",
+        "borderSuccess": "border.success",
+        "borderWarning": "border.warning",
+        "borderError": "border.error",
+        "borderInformation": "border.information",
+        "textSuccess": "text.success",
+        "textWarning": "text.warning",
+        "textError": "text.error",
+        "textInformation": "text.information",
+        "radius": "radiusComponent.alert",
+        "borderWidth": "borderWidthComponent.alert"
+      }
+    },
+
+    "Snackbar": {
+      "category": "feedback",
+      "description": "Temporary notification message appearing at the bottom of the screen.",
+      "variants": {
+        "type": ["default", "success", "warning", "error", "information"],
+        "action": [true, false]
+      },
+      "tokens": {
+        "background": "surface.primary",
+        "text": "text.body",
+        "border": "border.primary",
+        "radius": "radius.sm"
+      }
+    },
+
+    "ToolTip": {
+      "category": "feedback",
+      "description": "Contextual information on hover.",
+      "variants": {
+        "position": ["top", "bottom", "left", "right"]
+      },
+      "tokens": {
+        "background": "surface.primary",
+        "text": "text.body",
+        "shadow": "sm"
+      }
+    },
+
+    "Modal": {
+      "category": "feedback",
+      "description": "Overlay dialog for focused tasks or confirmations.",
+      "variants": {
+        "size": ["sm", "md", "lg"],
+        "type": ["default", "confirm", "alert"]
+      },
+      "tokens": {
+        "background": "surface.primary",
+        "overlay": "surface.modal",
+        "text": "text.body",
+        "heading": "text.headings",
+        "radius": "radiusComponent.card",
+        "shadow": "lg"
+      }
+    },
+
+    "Loader": {
+      "category": "feedback",
+      "description": "Indeterminate loading spinner.",
+      "variants": {
+        "size": ["sm", "md", "lg"],
+        "type": ["spinner", "dots"]
+      },
+      "tokens": {
+        "color": "surface.action-1"
+      }
+    },
+
+    "Progress Bar": {
+      "category": "feedback",
+      "description": "Horizontal bar showing task completion percentage.",
+      "variants": {
+        "type": ["default", "success", "warning", "error"],
+        "size": ["sm", "md"]
+      },
+      "tokens": {
+        "background": "surface.disabled",
+        "fillDefault": "surface.action-1",
+        "fillSuccess": "surface.sucess",
+        "fillError": "surface.error",
+        "fillWarning": "surface.warning",
+        "radius": "radius.round"
+      }
+    },
+
+    "Progress Circle": {
+      "category": "feedback",
+      "description": "Circular progress indicator.",
+      "variants": {
+        "type": ["default", "success", "error"],
+        "size": ["sm", "md", "lg"]
+      },
+      "tokens": {
+        "background": "surface.disabled",
+        "fill": "surface.action-1",
+        "text": "text.body"
+      }
+    },
+
+    "Card Image": {
+      "category": "data-display",
+      "description": "Card component with image, title, and description.",
+      "variants": {
+        "size": ["sm", "md", "lg"],
+        "interactive": [true, false]
+      },
+      "tokens": {
+        "background": "surface.primary",
+        "text": "text.body",
+        "heading": "text.headings",
+        "border": "border.primary",
+        "radius": "radiusComponent.card",
+        "shadow": "sm"
+      }
+    },
+
+    "Card Icon": {
+      "category": "data-display",
+      "description": "Card component with icon, title, and description.",
+      "variants": {
+        "size": ["sm", "md"],
+        "interactive": [true, false]
+      },
+      "tokens": {
+        "background": "surface.primary",
+        "text": "text.body",
+        "heading": "text.headings",
+        "border": "border.primary",
+        "radius": "radiusComponent.card",
+        "shadow": "sm"
+      }
+    },
+
+    "Avatar": {
+      "category": "data-display",
+      "description": "User profile image or initials placeholder.",
+      "variants": {
+        "type": ["image", "initials", "icon"],
+        "size": ["xs", "sm", "md", "lg", "xl"]
+      },
+      "tokens": {
+        "background": "surface.secondary",
+        "text": "text.body",
+        "border": "border.primary",
+        "borderWidth": "borderWidthComponent.avatar",
+        "radius": "radius.round"
+      }
+    },
+
+    "Avatar Caption": {
+      "category": "data-display",
+      "description": "Avatar with name and subtitle below.",
+      "variants": {
+        "size": ["sm", "md", "lg"]
+      },
+      "tokens": {
+        "text": "text.body",
+        "subtext": "text.disabled"
+      }
+    },
+
+    "Avatar Group": {
+      "category": "data-display",
+      "description": "Overlapping group of avatars with overflow count.",
+      "variants": {
+        "size": ["sm", "md"]
+      },
+      "tokens": {
+        "background": "surface.secondary",
+        "border": "surface.primary",
+        "radius": "radius.round"
+      }
+    },
+
+    "Icon": {
+      "category": "data-display",
+      "description": "Standalone icon element.",
+      "variants": {
+        "size": ["xs", "sm", "md", "lg"],
+        "type": ["primary", "information", "success", "warning", "error"]
+      },
+      "tokens": {
+        "colorPrimary": "icon.primary",
+        "colorInformation": "icon.information",
+        "colorSuccess": "icon.success",
+        "colorWarning": "icon.warning",
+        "colorError": "icon.error"
+      }
+    },
+
+    "Header Navigation": {
+      "category": "navigation",
+      "description": "Top navigation bar with logo, links, and actions.",
+      "variants": {
+        "type": ["desktop", "mobile"],
+        "state": ["default", "scrolled"]
+      },
+      "tokens": {
+        "background": "surface.primary",
+        "text": "text.action",
+        "textHover": "text.action-hover",
+        "border": "border.primary",
+        "shadow": "xs"
+      }
+    },
+
+    "Tab Bar": {
+      "category": "navigation",
+      "description": "Horizontal tab navigation for switching between views.",
+      "variants": {
+        "size": ["sm", "md"],
+        "state": ["default", "active", "disabled"]
+      },
+      "tokens": {
+        "background": "surface.primary",
+        "textActive": "text.action",
+        "textDefault": "text.body",
+        "textDisabled": "text.disabled",
+        "borderActive": "border.action",
+        "borderWidth": "borderWidthComponent.highlight"
+      }
+    },
+
+    "Breadcrumb": {
+      "category": "navigation",
+      "description": "Hierarchical navigation path indicator.",
+      "variants": {
+        "size": ["sm", "md"]
+      },
+      "tokens": {
+        "text": "text.action",
+        "textCurrent": "text.body",
+        "textHover": "text.action-hover"
+      }
+    },
+
+    "Menu": {
+      "category": "navigation",
+      "description": "Dropdown or contextual menu with list of options.",
+      "variants": {
+        "state": ["default", "hover", "selected", "disabled"],
+        "type": ["dropdown", "contextual"]
+      },
+      "tokens": {
+        "background": "surface.primary",
+        "backgroundHover": "surface.secondary",
+        "backgroundSelected": "surface.action-2-hover",
+        "text": "text.body",
+        "textSelected": "text.action",
+        "border": "border.primary",
+        "radius": "radius.sm",
+        "shadow": "sm"
+      }
+    },
+
+    "Pagination": {
+      "category": "navigation",
+      "description": "Page navigation controls for paginated content.",
+      "variants": {
+        "size": ["sm", "md"],
+        "state": ["default", "active", "disabled"]
+      },
+      "tokens": {
+        "background": "surface.primary",
+        "backgroundActive": "surface.action-1",
+        "text": "text.body",
+        "textActive": "text.on-action",
+        "textDisabled": "text.disabled",
+        "border": "border.primary",
+        "radius": "radius.sm"
+      }
+    },
+
+    "List": {
+      "category": "data-display",
+      "description": "Vertical list of items.",
+      "variants": {
+        "type": ["default", "ordered", "unordered"],
+        "interactive": [true, false]
+      },
+      "tokens": {
+        "background": "surface.primary",
+        "backgroundHover": "surface.secondary",
+        "text": "text.body",
+        "border": "border.primary"
+      }
+    },
+
+    "Row": {
+      "category": "data-display",
+      "description": "Single list row item.",
+      "variants": {
+        "state": ["default", "hover", "selected", "disabled"]
+      },
+      "tokens": {
+        "background": "surface.primary",
+        "backgroundHover": "surface.secondary",
+        "backgroundSelected": "surface.action-2-hover",
+        "text": "text.body",
+        "border": "border.primary"
+      }
+    },
+
+    "Row table": {
+      "category": "data-display",
+      "description": "Table row component.",
+      "variants": {
+        "state": ["default", "hover", "selected"],
+        "type": ["header", "body"]
+      },
+      "tokens": {
+        "background": "surface.primary",
+        "backgroundHeader": "surface.secondary",
+        "backgroundHover": "surface.secondary",
+        "text": "text.body",
+        "textHeader": "text.headings",
+        "border": "border.primary"
+      }
+    },
+
+    "Cell": {
+      "category": "data-display",
+      "description": "Individual table cell.",
+      "variants": {
+        "type": ["text", "number", "action", "status"]
+      },
+      "tokens": {
+        "text": "text.body",
+        "border": "border.primary"
+      }
+    },
+
+    "Tree List": {
+      "category": "data-display",
+      "description": "Hierarchical expandable list.",
+      "variants": {
+        "state": ["collapsed", "expanded", "selected"]
+      },
+      "tokens": {
+        "background": "surface.primary",
+        "backgroundSelected": "surface.action-2-hover",
+        "text": "text.body",
+        "textSelected": "text.action"
+      }
+    },
+
+    "Accordion": {
+      "category": "data-display",
+      "description": "Expandable/collapsible content section.",
+      "variants": {
+        "state": ["collapsed", "expanded"],
+        "type": ["default", "bordered"]
+      },
+      "tokens": {
+        "background": "surface.primary",
+        "text": "text.body",
+        "heading": "text.headings",
+        "border": "border.primary",
+        "borderWidth": "borderWidth.sm"
+      }
+    },
+
+    "Expandable": {
+      "category": "data-display",
+      "description": "Single expandable content block.",
+      "variants": {
+        "state": ["collapsed", "expanded"]
+      },
+      "tokens": {
+        "background": "surface.primary",
+        "text": "text.body",
+        "border": "border.primary"
+      }
+    },
+
+    "Hr": {
+      "category": "layout",
+      "description": "Horizontal rule / divider line.",
+      "variants": {
+        "type": ["solid", "dashed"]
+      },
+      "tokens": {
+        "color": "border.primary",
+        "borderWidth": "borderWidth.sm"
+      }
+    },
+
+    "Carousel": {
+      "category": "layout",
+      "description": "Horizontally scrollable content slider.",
+      "variants": {
+        "type": ["default", "with-arrows", "with-dots"]
+      },
+      "tokens": {
+        "background": "surface.primary",
+        "arrowBackground": "surface.action-1",
+        "dotActive": "surface.action-1",
+        "dotDefault": "surface.disabled"
+      }
+    },
+
+    "Forms": {
+      "category": "layout",
+      "description": "Form layout container grouping fields.",
+      "variants": {
+        "layout": ["single-column", "two-column"],
+        "type": ["newsletter", "contact", "login"]
+      },
+      "tokens": {
+        "background": "surface.primary",
+        "border": "border.primary",
+        "radius": "radiusComponent.card"
+      }
+    }
+  }
+}
